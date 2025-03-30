@@ -2,14 +2,14 @@
 import mysql.connector
 
 # Connection to MySQL
-conexion = mysql.connector.connect(
+connection = mysql.connector.connect(
     host="localhost",
     user="admin",      # MySQL user
     password="Curs202425",      # user's password
     database="classicmodels"
 )
 
-cursor = conexion.cursor()
+cursor = connection.cursor()
 
 # Select and show all the customers
 cursor.execute("SELECT * FROM Customers")
@@ -25,4 +25,4 @@ for customer in cursor.fetchall():
     # Print the customer name
     print(customer[1])
 
-conexion.close()
+connection.close()
