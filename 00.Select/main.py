@@ -1,11 +1,11 @@
 #Use pip install mysql-connector-python if you don't have this package installed
 import mysql.connector
 
-# Conexión a MySQL (ajusta user, password y host según tu configuración)
+# Connection to MySQL
 conexion = mysql.connector.connect(
     host="localhost",
-    user="admin",      # Usuario de MySQL
-    password="Curs202425",      # Contraseña (vacía por defecto en XAMPP/WAMP)
+    user="admin",      # MySQL user
+    password="Curs202425",      # user's password
     database="classicmodels"
 )
 
@@ -22,6 +22,7 @@ cursor.execute("SELECT customerNumber, customerName, creditLimit FROM Customers 
 print("\nCustomers with more than 100000:")
 for customer in cursor.fetchall():
     print(customer)
+    # Print the customer name
     print(customer[1])
 
 conexion.close()
