@@ -30,5 +30,5 @@ studentsToInsert = []
 for customer in cursor.fetchall():
     studentsToInsert.append((customer[0], customer[1], customer[2], random.randrange(18, 41)))
 
-cursorBM.executemany("INSERT INTO Students (Id, name, lastName) Values(%s,%s,%s)",studentsToInsert)
+cursorBM.executemany("INSERT INTO Students (Id, name, lastName, age) Values(%s,%s,%s,%s)",studentsToInsert)
 #connectionBM.commit()
